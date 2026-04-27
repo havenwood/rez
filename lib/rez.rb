@@ -3,10 +3,10 @@
 require "optparse"
 require "open3"
 require "tempfile"
-require_relative "rev/version"
+require_relative "rez/version"
 
-module Rev
-  DIR = ".rev"
+module Rez
+  DIR = ".rez"
 
   class << self
     def run
@@ -97,7 +97,7 @@ module Rev
 
       abort "r#{rev} not found" unless rev >= 1 && rev < cur
 
-      Tempfile.create("rev") do |tmp|
+      Tempfile.create("rez") do |tmp|
         IO.copy_stream base_path(file), tmp.path
         1.upto(rev - 1) do |r|
           p = patch_path file, r
@@ -124,7 +124,7 @@ module Rev
         run_diff snapshot_path(file), file
       else
         content = reconstruct file, rev
-        Tempfile.create("rev") do |tmp|
+        Tempfile.create("rez") do |tmp|
           tmp.write content
           tmp.flush
           run_diff tmp.path, file

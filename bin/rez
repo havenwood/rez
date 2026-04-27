@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 # frozen_string_literal: true
 
-require "rev"
+require "rez"
 
-Rev.run
+Rez.run

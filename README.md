@@ -1,22 +1,22 @@
-# Rev
+# Rez
 
 Single-file version control. Just `diff` and `patch` under the hood.
 
 ## Install
 
 ```sh
-gem install rev
+gem install rez
 ```
 
 ## Usage
 
 ```sh
-rev save file.rb initial version
-rev save -m "fix the thing"
-rev log
-rev diff 1
-rev show 1
-rev restore 1
+rez save file.rb initial version
+rez save -m "fix the thing"
+rez log
+rez diff 1
+rez show 1
+rez restore 1
 ```
 
 Name the file once. Pass it again only when more than one is tracked.
@@ -24,7 +24,7 @@ Name the file once. Pass it again only when more than one is tracked.
 ## Storage
 
 ```
-.rev/<filename>/
+.rez/<filename>/
   base        # first version (immutable)
   snapshot    # latest version
   log         # one line per rev: timestamp message

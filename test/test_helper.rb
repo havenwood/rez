@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require "rev"
+require "rez"
 require "minitest/autorun"
 require "minitest/pride"
 require "minitest/proveit"
